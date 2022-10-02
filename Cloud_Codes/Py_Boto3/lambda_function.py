@@ -6,9 +6,7 @@ def lambda_handler(event, context):
             {
                 'Name': 'tag:project',
                 'Values': [event['project']]
-            },
-        ]
-    )
+            },])
     msg_dict = {'PreviousState': None, 'CurrentState': None}
     for instance in response['Reservations']:
         instance_id = instance['Instances'][0]['InstanceId']
